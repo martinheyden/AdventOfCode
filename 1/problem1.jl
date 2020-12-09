@@ -4,7 +4,6 @@ function readdata()
     for i = 1:length(words)
         vec[i] = parse(Int,words[i])
     end
-    sort!(vec)
     return vec
 end
 
@@ -41,9 +40,3 @@ function part2(vec)
         end
     end
 end
-
-
-
-
-println(part1(2020,readdata()))   
-println(part2(readdata())) 
