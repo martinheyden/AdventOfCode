@@ -1,0 +1,10 @@
+include("func16.jl")
+
+rules, my_ticket, tickets = read_data("input.txt")
+println(check_tickets(tickets,rules))
+valid_tickets = get_valid_tickets(tickets,rules)
+filed_map = get_possible_field_maps(valid_tickets,rules)
+unique_map = zeros(Int,length(my_ticket))
+get_uniques!(filed_map,unique_map)
+println(get_depart_prod(my_ticket,unique_map))
+#println(get_depart_prod(my_ticket,filed_map))
