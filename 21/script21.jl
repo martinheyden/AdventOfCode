@@ -1,0 +1,7 @@
+include("func21.jl")
+data,allergy_dict,ingr_dict = parse_data(readlines("input.txt"))
+alergs_set_array = find_possible_sources(data, length(ingr_dict), length(allergy_dict))
+safe_set= find_safe_ingr(length(ingr_dict), alergs_set_array)
+println(count_safe_occurance(data,safe_set))
+unique_map, alergs_set_array=  find_possible_allergs(alergs_set_array)
+mes = generate_canonical_list(unique_map, ingr_dict,allergy_dict)
